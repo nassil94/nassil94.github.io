@@ -27,11 +27,6 @@
                     const gravita = parseInt(document.querySelector('input[name="gravita"]:checked')?.value ?? 0, 10); // CONVERSIONE DEI DATI INSERITI NEL FORM IN INTERO
                     const probabilita = parseInt(document.querySelector('input[name="probabilita"]:checked')?.value ?? 0, 10);
 
-                    if (!gravita || !probabilita) {
-                        document.getElementById("messaggio").innerText = "Seleziona entrambi i valori!";
-                        return;
-                    }
-
                     const rischio = gravita * probabilita;  //CALCOLO DEL FATTORE DI RISCHIO
                     let immagine = "matrice del rischio.jpg";
                     document.getElementById("messaggio").innerText = "Il fattore di rischio è: " + rischio;
