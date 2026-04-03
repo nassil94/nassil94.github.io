@@ -4,12 +4,13 @@
         <title>Calcolatore del Fattore di Rischio sul lavoro</title>
     </head>
     <body>
-        <form action="rischio.php" method="get">
-            Gravitá del danno:<br>
+        <form id = "rischio">            <!-- CREAZIONE DI UN FORM PER CALCOLARE IL FATTORE DI RISCHIO CON I DATI INSERITI DALL´UTENTE -->
+            Gravitá del danno:<br>                  <!-- LISTA DI VOCI PER IL MENU DI SCELTA-->
             <input type=radio name=gravita value=g1>1 - Lieve<br>
             <input type=radio name=gravita value=g2>2 - Medio<br>
             <input type=radio name=gravita value=g3>3 - Grave<br>
             <input type=radio name=gravita value=g4>4 - Gravissimo<br>
+            <br><br>
             Probabilitá:<br>
             <input type=radio name=probabilita value=p1>1 - Improbabile<br>
             <input type=radio name=probabilita value=p2>2 - Poco probabile<br>
@@ -17,5 +18,25 @@
             <input type=radio name=probabilita value=p4>4 - Altamente probabile<br>
             <input type=submit value="Calcola">
         </form>
+        <div id="messaggio"></div>
+
+            <script>
+                document.getElementById("rischio").addEventListener("submit", function(e){
+                    e.preventDefault(); // EVITA DI RICARICARE LA PAGINA 
+
+                    const gravita = parseInt(document.querySelector('input[name="gravita"]:checked')?.value ?? 0, 10); // CONVERSIONE DEI DATI INSERITI NEL FORM IN INTERO
+                    const probabilita = parseInt(document.querySelector('input[name="probabilita"]:checked')?.value ?? 0, 10);
+
+                    if (!gravita || !probabilita) {
+                        document.getElementById("messaggio").innerText = "Seleziona entrambi i valori!";
+                        return;
+                    }
+
+                    const rischio = gravita * probabilita;  //CALCOLO DEL FATTORE DI RISCHIO
+                    let immagine = "matrice del rischio.jpg";
+                    document.getElementById("messaggio").innerText = "Il fattore di rischio è: " + rischio;
+                    document.getElementById("immagineRischio").innerHTML = `<img src="${immagine}" alt="Rischio">`;
+                });
+            </script>
     </body>
 </html>
