@@ -1,15 +1,15 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pagina web responsive per il calcolo del fattore di rischio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   <!--PER RENDERE LA PAGINA MOBILE-FRIENDLY-->
+        <title>Pagina web responsive per il calcolo del fattore di rischio</title>  <!--TITOLO DELLA PAGINA-->
 
     </head>
     <body>
-          <button onclick="window.location.href='calcolatore_rischio.html'">Calcolatore</button><br><br>
-          <a href="Sicurezza e privatezza aziendale.pdf" download> <button>Scarica PDF</button> </a>
+          <button onclick="window.location.href='calcolatore_rischio.html'">Calcolatore</button><br><br>   <!--GENERAZIONE DI UN BOTTONE CON RIFERIMENTO AL FILE calcolatore_rischio.html-->
+          <a href="Sicurezza e privatezza aziendale.pdf" download> <button>Scarica PDF</button> </a>   <!--GENERAZIONE DI UN BOTTONE CON RIFERIMENTO AL PDF DA SCARICARE-->
           <br><br>
           <div id="qrcode"></div>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>   <!--GENERAZIONE DI UN QRCODE CON RIFERIMENTO AL LIMK DI GITHUB-->
               <script>
                     const url = "https://nassil94.github.io";
                        new QRCode(document.getElementById("qrcode"), {
