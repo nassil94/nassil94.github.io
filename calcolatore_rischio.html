@@ -28,7 +28,7 @@
                     const probabilita = parseInt(document.querySelector('input[name="probabilita"]:checked')?.value ?? 0, 10);
 
                     const rischio = gravita * probabilita;  //CALCOLO DEL FATTORE DI RISCHIO
-                    immagine = "matrice%20del%20rischio.jpg";
+                    let immagine = "matrice%20del%20rischio.jpg";
                     document.getElementById("messaggio").innerText = "Il fattore di rischio è: " + rischio;
                     document.getElementById("immagineRischio").innerHTML = `<img src="${immagine}" alt="Rischio">`;
                 });
