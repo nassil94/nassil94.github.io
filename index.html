@@ -6,5 +6,14 @@
     <body>
           <button onclick="window.location.href='calcolatore_rischio.html'">Calcolatore</button><br><br>
           <a href="Sicurezza e privatezza aziendale.pdf" download> <button>Scarica PDF</button> </a>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+              <script>
+                       new QRCode(document.getElementById("qrcode"), {
+                           text: window.location.href,
+                           width: 200,
+                           height: 200
+                        });
+              </script>
+
         </body>
 </html>
