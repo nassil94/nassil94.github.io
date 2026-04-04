@@ -1,42 +1,42 @@
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8">    <!--PER LA VISUALIZZAZIONE CORRETTA DI CERTI CARATTERI SULLA PAGIMA WEB-->
         <meta name="viewport" content="width=device-width, initial-scale=2.0">   <!--PER RENDERE LA PAGINA MOBILE-FRIENDLY-->
-        <title>Calcolatore del Fattore di Rischio sul lavoro</title>
+        <title>Calcolatore del Fattore di Rischio sul lavoro</title>        <!-- TITOLO DELLA PAGINA WEB -->
     </head>
     <body>
-        <form id = "rischio">            <!-- CREAZIONE DI UN FORM PER CALCOLARE IL FATTORE DI RISCHIO CON I DATI INSERITI DALL´UTENTE -->
-            Gravitá del danno:<br>                  <!-- LISTA DI VOCI PER IL MENU DI SCELTA-->
+        <form id = "rischio">            <!-- CREAZIONE DI UN FORM PER CALCOLARE IL FATTORE DI RISCHIO CON I DATI SCELTI DALL´UTENTE -->
+            Gravitá del danno:<br>                  <!-- LISTA DI VOCI PER IL FORM-->
             <label><input type=radio name=gravita value=1>1 - Lieve</label><br>
             <label><input type=radio name=gravita value=2>2 - Medio</label><br>
             <label><input type=radio name=gravita value=3>3 - Grave</label><br>
             <label><input type=radio name=gravita value=4>4 - Gravissimo</label><br>
             <br><br>
             Probabilitá:<br>
-            <label><input type=radio name=probabilita value=1>1 - Improbabile</label><br>
+            <label><input type=radio name=probabilita value=1>1 - Improbabile</label><br>       <!-- A OGNI VOCE DEL FORM; É ASSOCIATO UN INTERO; UTILE PER IL PARSEINT PER POTER RICAVARE IL FATTORE DEL RISCHIO TRAMITE LA SCELTA DELL´UTENTE -->
             <label><input type=radio name=probabilita value=2>2 - Poco probabile</label><br>
             <label><input type=radio name=probabilita value=3>3 - Probabile</label><br>
             <label><input type=radio name=probabilita value=4>4 - Altamente probabile</label><br><br><br>
-            <input type=submit value="Calcola">
+            <input type=submit value="Calcola">    <!-- BOTTONE PER AZIONARE IL CALCOLATORE-->
         </form>
-        <div id="messaggio"></div>
-        <div id="immagineRischio"></div>
+        <div id="messaggio"></div>        <!-- CONTENITORE PER LA VISUALIZZAZIONE DI UN MESSAGGIO AL VERIFICARSI DI UN EVENTO -->
+        <div id="immagineRischio"></div>    <!-- CONTENITORE PER LA VISUALIZZAZIONE DELLA MATRICE DEL RISCHIO ALLA VISUALIZZAZIONE IN OUTPUT DEL FATTORE DI RISCHIO -->
 
-            <script>
-                document.getElementById("rischio").addEventListener("submit", function(e){
+            <script>        // CODICE IN jAVASCRIPT
+                document.getElementById("rischio").addEventListener("submit", function(e){  //AGGIUNTA DI UN EVENTO PER IL CALCOLO DEL FATTORE DEL RISCHIO
                     e.preventDefault(); // EVITA DI RICARICARE LA PAGINA 
 
-                    const gravita = parseInt(document.querySelector('input[name="gravita"]:checked')?.value ?? 0, 10); // CONVERSIONE DEI DATI INSERITI NEL FORM IN INTERO
+                    const gravita = parseInt(document.querySelector('input[name="gravita"]:checked')?.value ?? 0, 10); // CONVERSIONE IN INT DEI DATI INSERITI NEL FORM 
                     const probabilita = parseInt(document.querySelector('input[name="probabilita"]:checked')?.value ?? 0, 10);
-                    if (!gravita || !probabilita) {
-                           document.getElementById("messaggio").innerText = "Selezionare entrambi i valori!"; // PER FAR SI CHE L´UTENTE SCELGA SIA LA PROBABILITA CHE IL RISCHIO
-                           document.getElementById("immagineRischio").innerHTML = "";  //PER FAR SI CHE NON COMPAIA LA MATRICE
+                    if (!gravita || !probabilita) {        //VERIFICA IN CASO L´UTENTE NON SELEZIONA UNO DEI DUE VALORI DI GRAVITÁ O DI PROBABILITÁ
+                           document.getElementById("messaggio").innerText = "Selezionare entrambi i valori!";  //VISUALIZZA IN OUTPUT IL MESSAGGIO DI ERRORE
+                           document.getElementById("immagineRischio").innerHTML = "";  //PER FAR SI CHE NON COMPAIA LA MATRICE DURANTE IL MESSAGGIO DI ERRORE
                            return;
                     }
                     const rischio = gravita * probabilita;  //CALCOLO DEL FATTORE DI RISCHIO
-                    let immagine = "matrice_del_rischio.jpg";
-                    document.getElementById("messaggio").innerText = "Il fattore di rischio è: " + rischio;
-                    document.getElementById("immagineRischio").innerHTML = `<img src="${immagine}" alt="Rischio" style="max-width:500px;">`;
+                    let immagine = "matrice_del_rischio.jpg";  //IMMAGINE DELLA MATRICE DI RISCHIO
+                    document.getElementById("messaggio").innerText = "Il fattore di rischio è: " + rischio;    //VISUALIZZAZIONE IN OUTPUT DEL VALORE DEL FATTORE DEL RISCHIO RICAVATO
+                    document.getElementById("immagineRischio").innerHTML = `<img src="${immagine}" alt="Rischio" style="max-width:500px;">`;  //VISUALIZZAZIONE IN OUTPUT DELLA MATRICE DEL RISCHIO
                 });
             </script>
     </body>
