@@ -6,25 +6,48 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-          <p class="h1">Gravitá del danno:</p>
-          <ul class="list-group">
-              <li class="list-group-item">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="1" id="lieve">
-                    <label class="form-check-label" for="firstRadio"> 1 - Lieve </label>
-              </li>
-              <li class="list-group-item">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="2" id="medio">
-                    <label class="form-check-label" for="secondRadio"> 2 - Medio </label>
-              </li>
-              <li class="list-group-item">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="3" id="grave">
-                    <label class="form-check-label" for="thirdRadio"> 3 - Grave </label>
-              </li>
-              <li class="list-group-item">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="4" id="gravissimo">
-                    <label class="form-check-label" for="fourthRadio"> 4 - Gravissimo </label>
-              </li>
-        </ul>
+          <div id="rischio">
+                  <p class="h1">Gravitá del danno:</p>
+                  <ul class="list-group">
+                          <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="1" id="lieve">
+                                <label class="form-check-label" for="firstRadio"> 1 - Lieve </label>
+                          </li>
+                          <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="2" id="medio">
+                                <label class="form-check-label" for="secondRadio"> 2 - Medio </label>
+                          </li>
+                          <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="3" id="grave">
+                                <label class="form-check-label" for="thirdRadio"> 3 - Grave </label>
+                          </li>
+                          <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="4" id="gravissimo">
+                                <label class="form-check-label" for="fourthRadio"> 4 - Gravissimo </label>
+                          </li>
+                 </ul>
+                <p class="h1">Probabilitá:</p>
+                  <ul class="list-group">
+                          <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="1" id="improbabile">
+                                <label class="form-check-label" for="firstRadio"> 1 - Improbabile </label>
+                          </li>
+                          <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="2" id="pocoProbabile">
+                                <label class="form-check-label" for="secondRadio"> 2 - Poco Probabile </label>
+                          </li>
+                          <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="3" id="probbaile">
+                                <label class="form-check-label" for="thirdRadio"> 3 - Probabile </label>
+                          </li>
+                          <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="4" id="altamenteProbabile">
+                                <label class="form-check-label" for="fourthRadio"> 4 - Altamente Probabile </label>
+                          </li>
+                 </ul>
+                <input class="btn btn-primary" type="button" value="Calcola">
+            
+          </div>
      
         <div id="messaggio"></div>        <!-- CONTENITORE PER LA VISUALIZZAZIONE DI UN MESSAGGIO AL VERIFICARSI DI UN EVENTO -->
         <div id="immagineRischio"></div>    <!-- CONTENITORE PER LA VISUALIZZAZIONE DELLA MATRICE DEL RISCHIO ALLA VISUALIZZAZIONE IN OUTPUT DEL FATTORE DI RISCHIO -->
