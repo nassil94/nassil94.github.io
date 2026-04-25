@@ -7,35 +7,37 @@
     </head>
     <body>
         <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-left">
-      <div class="list-group list-group-checkable d-grid gap-2 border-0">
-        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="1" checked="">
-        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1"><font _mstmutation="1" _msttexthash="155402" _msthash="37">1 - Lieve</font><span class="d-block small opacity-50" _msttexthash="2217007" _msthash="38"></span>
-        </label>
-        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios2" value="2">
-        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios2"><font _mstmutation="1" _msttexthash="201435" _msthash="39">2 - Medio</font><span class="d-block small opacity-50" _msttexthash="364559" _msthash="40"></span>
-        </label>
-        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios3" value="3">
-        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios3"><font _mstmutation="1" _msttexthash="157157" _msthash="41">3 - Grave</font><span class="d-block small opacity-50" _msttexthash="1362634" _msthash="42"></span>
-        </label>
-        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios4" value="4">
-        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios4"><font _mstmutation="1" _msttexthash="540995" _msthash="43">4 - Gravissimo</font><span class="d-block small opacity-50" _msttexthash="732446" _msthash="44"></span>
-        </label
-      </div>
-    </div>
-        <form id = "rischio">            <!-- CREAZIONE DI UN FORM PER CALCOLARE IL FATTORE DI RISCHIO CON I DATI SCELTI DALL´UTENTE -->
-            Gravitá del danno:<br>                  <!-- LISTA DI VOCI PER IL FORM-->
-            <label><input type=radio name=gravita value=1>1 - Lieve</label><br>
-            <label><input type=radio name=gravita value=2>2 - Medio</label><br>
-            <label><input type=radio name=gravita value=3>3 - Grave</label><br>
-            <label><input type=radio name=gravita value=4>4 - Gravissimo</label><br>
-            <br><br>
-            Probabilitá:<br>
-            <label><input type=radio name=probabilita value=1>1 - Improbabile</label><br>       <!-- A OGNI VOCE DEL FORM; É ASSOCIATO UN INTERO; UTILE PER IL PARSEINT PER POTER RICAVARE IL FATTORE DEL RISCHIO TRAMITE LA SCELTA DELL´UTENTE -->
-            <label><input type=radio name=probabilita value=2>2 - Poco probabile</label><br>
-            <label><input type=radio name=probabilita value=3>3 - Probabile</label><br>
-            <label><input type=radio name=probabilita value=4>4 - Altamente probabile</label><br><br><br>
-            <input type=submit value="Calcola">    <!-- BOTTONE PER AZIONARE IL CALCOLATORE-->
-        </form>
+              <div class="list-group list-group-checkable d-grid gap-2 border-0">
+                    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="1" checked="">
+                    <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1"><font _mstmutation="1" _msttexthash="155402" _msthash="37">1 - Lieve</font><span class="d-block small opacity-50" _msttexthash="2217007" _msthash="38"></span>
+                        </label>
+                    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios2" value="2">
+                    <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios2"><font _mstmutation="1" _msttexthash="201435" _msthash="39">2 - Medio</font><span class="d-block small opacity-50" _msttexthash="364559" _msthash="40"></span>
+                        </label>
+                    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios3" value="3">
+                     <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios3"><font _mstmutation="1" _msttexthash="157157" _msthash="41">3 - Grave</font><span class="d-block small opacity-50" _msttexthash="1362634" _msthash="42"></span>
+                        </label>
+                    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios4" value="4">
+                    <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios4"><font _mstmutation="1" _msttexthash="540995" _msthash="43">4 - Gravissimo</font><span class="d-block small opacity-50" _msttexthash="732446" _msthash="44"></span>
+                        </label>
+               </div>
+                 <div class="list-group list-group-checkable d-grid gap-2 border-0">
+                    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="1" checked="">
+                    <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1"><font _mstmutation="1" _msttexthash="155402" _msthash="37">1 - Improbabile</font><span class="d-block small opacity-50" _msttexthash="2217007" _msthash="38"></span>
+                        </label>
+                    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios2" value="2">
+                    <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios2"><font _mstmutation="1" _msttexthash="201435" _msthash="39">2 - Poco probabile</font><span class="d-block small opacity-50" _msttexthash="364559" _msthash="40"></span>
+                        </label>
+                    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios3" value="3">
+                     <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios3"><font _mstmutation="1" _msttexthash="157157" _msthash="41">3 - Probabile</font><span class="d-block small opacity-50" _msttexthash="1362634" _msthash="42"></span>
+                        </label>
+                    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios4" value="4">
+                    <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios4"><font _mstmutation="1" _msttexthash="540995" _msthash="43">4 - Altamente probabile</font><span class="d-block small opacity-50" _msttexthash="732446" _msthash="44"></span>
+                        </label>
+                    <input type=submit value="Calcola">
+               </div>
+        </div>
+     
         <div id="messaggio"></div>        <!-- CONTENITORE PER LA VISUALIZZAZIONE DI UN MESSAGGIO AL VERIFICARSI DI UN EVENTO -->
         <div id="immagineRischio"></div>    <!-- CONTENITORE PER LA VISUALIZZAZIONE DELLA MATRICE DEL RISCHIO ALLA VISUALIZZAZIONE IN OUTPUT DEL FATTORE DI RISCHIO -->
 
