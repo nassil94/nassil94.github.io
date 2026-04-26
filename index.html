@@ -1,27 +1,54 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=2.0">   <!--PER RENDERE LA PAGINA MOBILE-FRIENDLY-->
-        <title>Pagina web responsive per il calcolo del fattore di rischio</title>  <!--TITOLO DELLA PAGINA-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <meta charset="UTF-8">                                                                                    <!-- Per l´interprezazione dei caratteri del testo -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">                                    <!-- Per rendere la pagina adattabile a qualsiasi dispositivo -->
+        <title>Pagina web responsive per il calcolo del fattore di rischio</title>                                <!-- Titolo della pagina web -->
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+              rel="stylesheet" 
+              integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+              crossorigin="anonymous">                                                                            <!-- link a Bootstrap -->
     </head>
+
     <body>
-          <div class="container p-5 my-5 bg-primary text-white">
-              <p class="h2">Fattore del rischio e privacy in ambito lavorativo</p>
-          </div>
-          <div class="container p-5 my-5 border">
-          <button onclick="window.location.href='calcolatore_rischio.html'">Calcolatore</button><br><br>   <!--GENERAZIONE DI UN BOTTONE CON RIFERIMENTO AL FILE calcolatore_rischio.html-->
-          <a href="Sicurezza e privatezza aziendale.pdf" download> <button>Scarica PDF</button> </a>   <!--GENERAZIONE DI UN BOTTONE CON RIFERIMENTO AL PDF DA SCARICARE-->
-          <br><br>
-          <div id="qrcode"></div>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>   <!--GENERAZIONE DI UN QRCODE CON RIFERIMENTO AL LIMK DI GITHUB-->
-              <script>        // SCRIPT IN LINGUAGGIO JAVASCRIPT
-                    const url = "https://nassil94.github.io";   // RIFERIMENTO AL LINK DELLA PAGINA WEB
-                       new QRCode(document.getElementById("qrcode"), {
-                           text: window.location.href,
-                           width: 200,        // DEFINIZIONE DELLA DIMENSIONE DEL QRCODE
-                           height: 200
-                        });
-              </script>
-          </div>
-        </body>
+        <div class="container p-5 my-5 bg-primary text-white">                                                    <!-- Creazione del primo container -->
+            <p class="h2">Fattore del rischio e privacy in ambito lavorativo</p>
+        </div>
+
+        <div class="container p-5 my-5 border">                                                                   <!-- Creazione del secondo container -->
+            <div class="row">                                                                                     <!-- Creazione del Grid per suddividere in 3 colonne il seccondo container -->
+
+                <div class="col-sm-3">                                                                            <!-- Prima colonna -->
+                    <button onclick="window.location.href='calcolatore_rischio.html'">                        
+                        Calcolatore
+                    </button>
+                    <br><br>
+                </div>
+
+                <div class="col-sm-3">                                                                             <!-- Seconda colonna -->
+                    <a href="Sicurezza e privatezza aziendale.pdf" download>
+                        <button>Scarica PDF</button>
+                    </a>
+                    <br><br>
+                </div>
+
+                <div class="col-sm-3">                                                                             <!-- Terza colonna -->
+                    <div id="qrcode"></div>                
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>    <!-- Generazione QRCode tramite Script JS -->
+
+                    <script>
+                        const url = "https://nassil94.github.io";                                                  
+
+                        new QRCode(document.getElementById("qrcode"), {
+                            text: url,   // FIX: ora usa la variabile
+                            width: 150,
+                            height: 150
+                        });                                        
+                    </script>                                                                                      <!-- Codice JS in cui linka alla pagina web e con dimenxione di 150x150 -->
+                </div>
+
+            </div>
+        </div>
+    </body>
 </html>
