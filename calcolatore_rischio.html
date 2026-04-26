@@ -70,8 +70,8 @@ document.getElementById("rischio").addEventListener("submit", function(e) {
 
     // Colore dinamico
     let colore = "text-success";
-    if (rischio >= 8) colore = "text-warning";
-    if (rischio >= 12) colore = "text-danger";
+    if (rischio >= 4) colore = "text-warning";
+    if (rischio >= 9) colore = "text-danger";
 
     document.getElementById("messaggio").innerText = "Fattore di rischio: " + rischio;
     document.getElementById("messaggio").className = colore + " fw-bold";
