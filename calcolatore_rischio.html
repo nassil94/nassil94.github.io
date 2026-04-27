@@ -130,8 +130,8 @@ if (rischio <= 3) {
   badge = '<span class="badge bg-danger ms-2">Alto</span>';
 }
 
-output.innerHTML = "Rischio: " + badge + " ( " + parseInt(gravita.value) + " x " + parseInt(probabilita.value) + " = " + rischio + " ) ";
-  output.className = classe + " fw-bold fs-1 mt-3";
+output.innerHTML = `Rischio: ${badge} ( ${gravita.value} x ${probabilita.value} = ${rischio} )`;
+  output.className = "fw-bold fs-1 mt-3";
 });
 </script>
     <footer class="bg-dark text-white text-center p-3 mt-5">
