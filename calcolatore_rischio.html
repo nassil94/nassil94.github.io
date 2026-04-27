@@ -123,11 +123,11 @@ document.getElementById("rischio").addEventListener("submit", function(e) {
 let badge = "";
 
 if (rischio <= 3) {
-  badge = '<h2><span class="badge bg-success">Basso</span></h2>';
+  badge = '<span class="badge bg-success ms-2">Basso</span>';
 } else if (rischio <= 8) {
-  badge = '<h2><span class="badge bg-warning text-dark">Medio</span></h2>';
+  badge = '<span class="badge bg-warning text-dark ms-2">Medio</span>';
 } else {
-  badge = '<h2><span class="badge bg-danger">Alto</span></h2>';
+  badge = '<span class="badge bg-danger ms-2">Alto</span>';
 }
 
 output.innerHTML = "Fattore di rischio: " + rischio + " " + badge;
