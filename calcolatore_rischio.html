@@ -88,7 +88,7 @@
       <img src="matrice_del_rischio.jpg"
            class="img-fluid rounded shadow mb-3"
            style="max-height: 400px; width: auto;">
-    <br><h3>FATTORE DI RISCHIO<small> = Gravità x Probabilità</small></h3>
+    <br><h3>FATTORE DI RISCHIO = GRAVITÀ x PROBABILITÀ</h3>
     <div id="messaggio" class="mt-1 fw-bold fs-1"></div>
 
     </div>
@@ -130,7 +130,7 @@ if (rischio <= 3) {
   badge = '<span class="badge bg-danger ms-2">Alto</span>';
 }
 
-output.innerHTML = "Rischio: " + parseInt(gravita.value) + " x " + parseInt(probabilita.value) + " = " + rischio + " " + badge;
+output.innerHTML = "Rischio: " + badge + " ( " + parseInt(gravita.value) + " x " + parseInt(probabilita.value) + " = " + rischio + " ) ";
   output.className = classe + " fw-bold fs-1 mt-3";
 });
 </script>
