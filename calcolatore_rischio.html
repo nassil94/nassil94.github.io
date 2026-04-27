@@ -120,8 +120,8 @@ document.getElementById("rischio").addEventListener("submit", function(e) {
   const rischio = parseInt(gravita.value) * parseInt(probabilita.value);
 
   let classe = "text-success";
-  if (rischio >= 6 && rischio < 12) classe = "text-warning";
-  if (rischio >= 12) classe = "text-danger";
+  if (rischio >= 4 && rischio <=8) classe = "text-warning";
+  if (rischio >= 9) classe = "text-danger";
 
   output.innerText = "Fattore di rischio: " + rischio;
 
