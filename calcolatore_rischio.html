@@ -120,13 +120,17 @@ document.getElementById("rischio").addEventListener("submit", function(e) {
   }
 
   const rischio = parseInt(gravita.value) * parseInt(probabilita.value);
+let badge = "";
 
-  let classe = "text-success";
-  if (rischio >= 4 && rischio <=8) classe = "text-warning";
-  if (rischio >= 9) classe = "text-danger";
+if (rischio <= 3) {
+  badge = '<span class="badge bg-success fs-6 ms-2">Basso</span>';
+} else if (rischio <= 8) {
+  badge = '<span class="badge bg-warning text-dark fs-6 ms-2">Medio</span>';
+} else {
+  badge = '<span class="badge bg-danger fs-6 ms-2">Alto</span>';
+}
 
-  output.innerText = "Fattore di rischio: " + rischio;
-
+output.innerHTML = "Fattore di rischio: " + rischio + " " + badge;
   output.className = classe + " fw-bold fs-1 mt-3";
 });
 </script>
