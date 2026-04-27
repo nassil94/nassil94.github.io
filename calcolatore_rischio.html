@@ -8,7 +8,7 @@
 </head>
 
 <body class="p-4" style="background-color: lightblue;">
-<div class="container p-5 my-5 bg-primary text-white" style="text-align: center;">
+<div class="container p-3 my-3 bg-primary text-white" style="text-align: center;">
      <p class="h2">Calcolatore del fattore di rischio</p>
 </div>
 <div class="container">
@@ -93,11 +93,9 @@
     </div>
   </div>
 
-     <div class="text-center">
-            <button onclick="window.location.href='index.html'" class="btn btn-primary">
-                   Homepage
-            </button>
-     </div>
+  <button onclick="window.location.href='index.html'" class="btn btn-primary d-block mx-auto">
+    Homepage
+  </button>
 
 </div>
 
@@ -127,7 +125,6 @@ document.getElementById("rischio").addEventListener("submit", function(e) {
 
   output.innerText = "Fattore di rischio: " + rischio;
 
-  // ✅ CORREZIONE: mantengo fs-1 e le altre classi
   output.className = classe + " fw-bold fs-1 mt-3";
 });
 </script>
