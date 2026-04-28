@@ -92,6 +92,7 @@
            style="max-height: 400px; width: auto;">
     <br><h3>FATTORE DI RISCHIO = GRAVITÀ x PROBABILITÀ</h3>
     <div id="messaggio" class="mt-1 fw-bold fs-2"></div>
+    <div id="calcolo" class="mt-2 fs-4"></div>
 
     </div>
   </div>
@@ -113,7 +114,7 @@ document.getElementById("rischio").addEventListener("submit", function(e) {
   const probabilita = document.querySelector('input[name="probabilita"]:checked');
 
   const output = document.getElementById("messaggio");
-  const fattore = document.getElementById("messaggio");
+  const fattore = document.getElementById("calcolo");
 
   const modal = new bootstrap.Modal(document.getElementById('erroreModal'));
 
@@ -134,7 +135,7 @@ if (rischio <= 3) {
 }
 
 output.innerHTML = `Rischio: ${badge}`;
-fattore.innerHTML = `FR = G (${gravita.value}) x P (${probabilita.value}) = ${rischio} `
+fattore.innerHTML = `Fattore di Rischio = G(${gravita.value}) x P(${probabilita.value}) = ${rischio} `
   output.className = "fw-bold fs-1 mt-3";
 });
 </script>
