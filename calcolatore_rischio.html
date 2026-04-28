@@ -22,7 +22,7 @@
 
       <form id="rischio" class="p-3 bg-white rounded shadow">
 
-        <h4>Gravità del danno</h4>
+        <h4>Gravità del danno (R)</h4>
         <div class="list-group mb-4">
           <label class="list-group-item">
             <input type="radio" name="gravita" value="1" class="form-check-input me-2"> 1 - Lieve
@@ -38,7 +38,7 @@
           </label>
         </div>
 
-        <h4>Probabilità</h4>
+        <h4>Probabilità (P) </h4>
         <div class="list-group mb-4">
           <label class="list-group-item">
             <input type="radio" name="probabilita" value="1" class="form-check-input me-2"> 1 - Improbabile
@@ -113,6 +113,7 @@ document.getElementById("rischio").addEventListener("submit", function(e) {
   const probabilita = document.querySelector('input[name="probabilita"]:checked');
 
   const output = document.getElementById("messaggio");
+  const fattore = document.getElementById("messaggio");
 
   const modal = new bootstrap.Modal(document.getElementById('erroreModal'));
 
@@ -132,7 +133,8 @@ if (rischio <= 3) {
   badge = '<span class="badge bg-danger ms-2">Alto</span>';
 }
 
-output.innerHTML = `Rischio: ${badge} ( ${gravita.value} x ${probabilita.value} = ${rischio} )`;
+output.innerHTML = `Rischio: ${badge}`;
+fattore.innerHTML = `FR = G (${gravita.value}) x P (${probabilita.value}) = ${rischio} `
   output.className = "fw-bold fs-1 mt-3";
 });
 </script>
