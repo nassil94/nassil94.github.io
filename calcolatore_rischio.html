@@ -1,149 +1,140 @@
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calcolatore del Rischio</title>
+     <head>
+               <meta charset="UTF-8">                                                                                                   <!-- Interpretazione dei caratteri del testo nella pagina web-->                     
+               <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                   <!-- Imposta il viewport per adattare il layout ai dispositivi mobili -->
+              
+               <title>Calcolatore del Rischio</title>                                                                                   <!-- Titolo della pagina web -->
+          
+               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">                   <!-- Collegamento al CSS di Bootstrap -->
+     </head>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+     <body class="d-flex flex-column min-vh-100" style="background-color: lightblue;">                                                  <!-- Body con sfondo azzurro e uso di Flexbox per disporre in colonna gli elementi-->
+             
+               <div class="container flex-grow-1">                                                                                      <!-- Container principale che racchiude i sotto-container -->
+               
+                         <div class="container p-3 my-3 bg-primary text-white" style="text-align: center;">                             <!-- Primo sotto-container Bootstrap con sfondo blu e testo bianco -->
+                                   <p class="h2">Calcolatore del fattore di rischio</p>                                                 <!-- Titolo della pagina web -->
+                                   <p class="h4">Seleziona probabilità e gravità per ottenere il fattore e il livello di rischio.</p>   <!-- Sottotitolo della pagina web -->
+                         </div>
+                    
+                         <div class="container">                                                                                        <!-- Secondo sotto-container --> 
+                                   <div class="row g-4">                                                                                <!-- Riga della Grid Bootstrap con spaziatura tra colonne -->
+                                       <div class="col-md-6">                                                                           <!-- Prima colonna del sotto-container -->
+                                             <form id="rischio" class="p-3 bg-white rounded shadow">                                    <!-- Form con radio button Bootstrap  per la gravitá del danno -->
+                                                  <h4>Gravità del danno(G):</h4>
+                                                          <div class="list-group mb-4">                                                  
+                                                          
+                                                                 <label class="list-group-item">
+                                                                      <input type="radio" name="gravita" value="1" class="form-check-input me-2"> 1 - Lieve       <!-- Primo elemento del form  Bootstrap-->
+                                                                 </label>
+                                                          
+                                                                 <label class="list-group-item">
+                                                                      <input type="radio" name="gravita" value="2" class="form-check-input me-2"> 2 - Medio       <!-- Secondo elemento del form  Bootstrap-->
+                                                                 </label>
+                                                          
+                                                                 <label class="list-group-item">
+                                                                      <input type="radio" name="gravita" value="3" class="form-check-input me-2"> 3 - Grave       <!-- Terzo elemento del form  Bootstrap-->
+                                                                 </label>
+                                                          
+                                                                 <label class="list-group-item">
+                                                                      <input type="radio" name="gravita" value="4" class="form-check-input me-2"> 4 - Gravissimo   <!-- Quarto elemento del form  Bootstrap-->
+                                                                 </label>
+                                                          </div>
 
-<body class="d-flex flex-column min-vh-100" style="background-color: lightblue;">
-<div class="container flex-grow-1">
-<div class="container p-3 my-3 bg-primary text-white" style="text-align: center;">
-     <p class="h2">Calcolatore del fattore di rischio</p>
-     <p class="h4">Seleziona probabilità e gravità per ottenere il fattore e il livello di rischio.</p>
-</div>
-<div class="container">
+                                                   <h4>Probabilità(P):</h4>                                                                          <!-- Form con radio button Bootstrap  per la gravitá del danno -->
+                                                          <div class="list-group mb-4">
+                                                          
+                                                                 <label class="list-group-item">
+                                                                      <input type="radio" name="probabilita" value="1" class="form-check-input me-2"> 1 - Improbabile       <!-- Primo elemento del form  Bootstrap-->
+                                                                 </label>
+                                                          
+                                                                 <label class="list-group-item">
+                                                                      <input type="radio" name="probabilita" value="2" class="form-check-input me-2"> 2 - Poco probabile     <!-- Primo elemento del form  Bootstrap-->
+                                                                 </label>
+                                                          
+                                                                 <label class="list-group-item">
+                                                                      <input type="radio" name="probabilita" value="3" class="form-check-input me-2"> 3 - Probabile          <!-- Primo elemento del form  Bootstrap-->
+                                                                 </label>
+                                                          
+                                                                 <label class="list-group-item">
+                                                                      <input type="radio" name="probabilita" value="4" class="form-check-input me-2"> 4 - Altamente probabile <!-- Primo elemento del form  Bootstrap-->
+                                                                 </label>
+                                                         </div>
+                                                  <button type="submit" class="btn btn-primary w-100">Calcola</button>                                                         <!-- Bottone per azionare il calcolatore -->
+                                              </form>
+                                            
+                                              <div class="modal fade" id="erroreModal" tabindex="-1">                                             <!-- Modale Bootstrap di Errore -con messaggio popup -->
+                                                   <div class="modal-dialog">                                                                     <!-- Contenitore della finestra -->                          
+                                                       <div class="modal-content">                                                                <!-- Contenuto della finestra -->
+                                                            <div class="modal-header">                                                            <!-- Intestazione della finestra popup -->
+                                                                <h5 class="modal-title">Errore</h5>                                               <!-- Titolo della finestra popup -->
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>         <!-- Bottone di chiusura del popup -->
+                                                            </div>
+                                                            
+                                                            <div class="modal-body">                                                              <!-- Corpo del popup -->
+                                                                 Devi selezionare entrambi i valori!                                              <!-- Contenuto del messaggio -->
+                                                            </div>     
 
-  <div class="row g-4">
+                                                            <div class="modal-footer">
+                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> OK </button>     <!-- Bottone di conferma del messaggio -->
+                                                            </div>
+                                                      </div>
+                                                 </div>
+                                            </div>
+                                        </div>
 
-    <!-- FORM -->
-    <div class="col-md-6">
+                                   <div class="col-md-6 text-center">                                                                 <!-- Seconda colonna del sotto-container -->
+                                                                                                                                      <!-- Margine sopra all´immagine Matrice del rischio -->
+                                              <img src="matrice_del_rischio.jpg"
+                                                 class="img-fluid rounded shadow mb-2"
+                                                 style="max-height: 400px; width: auto;">
 
-      <form id="rischio" class="p-3 bg-white rounded shadow">
+                                                 <div id="messaggio" class="fw-bold fs-2"></div>
+                                             
+                                                 <div id="calcolo" class="fs-4 mt-1"></div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <br><button onclick="window.location.href='index.html'" class="btn btn-primary btn-lg d-block mx-auto"> Homepage </button>
+                       </div>
+               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+               <script>
+                         document.getElementById("rischio").addEventListener("submit", function(e) {
+                              
+                              	e.preventDefault();
 
-        <h4>Gravità del danno(G):</h4>
-        <div class="list-group mb-4">
-          <label class="list-group-item">
-            <input type="radio" name="gravita" value="1" class="form-check-input me-2"> 1 - Lieve
-          </label>
-          <label class="list-group-item">
-            <input type="radio" name="gravita" value="2" class="form-check-input me-2"> 2 - Medio
-          </label>
-          <label class="list-group-item">
-            <input type="radio" name="gravita" value="3" class="form-check-input me-2"> 3 - Grave
-          </label>
-          <label class="list-group-item">
-            <input type="radio" name="gravita" value="4" class="form-check-input me-2"> 4 - Gravissimo
-          </label>
-        </div>
+                                   const gravita = document.querySelector('input[name="gravita"]:checked');
+                                   const probabilita = document.querySelector('input[name="probabilita"]:checked');
+                                   const output = document.getElementById("messaggio");
+                                   const fattore = document.getElementById("calcolo");
+                                   const modal = new bootstrap.Modal(document.getElementById('erroreModal'));
 
-        <h4>Probabilità(P):</h4>
-        <div class="list-group mb-4">
-          <label class="list-group-item">
-            <input type="radio" name="probabilita" value="1" class="form-check-input me-2"> 1 - Improbabile
-          </label>
-          <label class="list-group-item">
-            <input type="radio" name="probabilita" value="2" class="form-check-input me-2"> 2 - Poco probabile
-          </label>
-          <label class="list-group-item">
-            <input type="radio" name="probabilita" value="3" class="form-check-input me-2"> 3 - Probabile
-          </label>
-          <label class="list-group-item">
-            <input type="radio" name="probabilita" value="4" class="form-check-input me-2"> 4 - Altamente probabile
-          </label>
-        </div>
+                                   if (!gravita || !probabilita) {
+                                            modal.show();
+                                            return;
+                                   }
 
-        <button type="submit" class="btn btn-primary w-100">Calcola</button>
-      </form>
+                                   const rischio = parseInt(gravita.value) * parseInt(probabilita.value);
+                                   let badge = "";
+                              
+                                   if (rischio <= 3) {
+                                            badge = '<span class="badge bg-success ms-2">Basso</span>';
+                                   } else if (rischio <= 8) {
+                                            badge = '<span class="badge bg-warning text-dark ms-2">Medio</span>';
+                                   } else {
+                                            badge = '<span class="badge bg-danger ms-2">Alto</span>';
+                                   }
 
-      <!-- MODALE ERRORE -->
-      <div class="modal fade" id="erroreModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-
-            <div class="modal-header">
-              <h5 class="modal-title">Errore</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <div class="modal-body">
-              Devi selezionare entrambi i valori!
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                OK
-              </button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- IMMAGINE -->
-    <div class="col-md-6 text-center">
-
-     
-     <div class="mt-2">
-    <img src="matrice_del_rischio.jpg"
-         class="img-fluid rounded shadow mb-2"
-         style="max-height: 400px; width: auto;">
-
-    <div id="messaggio" class="fw-bold fs-2"></div>
-    <div id="calcolo" class="fs-4 mt-1"></div>
-</div>
-
-    </div>
-  </div>
-
-  <br><button onclick="window.location.href='index.html'" 
-        class="btn btn-primary btn-lg d-block mx-auto">
-  Homepage
-</button>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-document.getElementById("rischio").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const gravita = document.querySelector('input[name="gravita"]:checked');
-  const probabilita = document.querySelector('input[name="probabilita"]:checked');
-
-  const output = document.getElementById("messaggio");
-  const fattore = document.getElementById("calcolo");
-
-  const modal = new bootstrap.Modal(document.getElementById('erroreModal'));
-
-  if (!gravita || !probabilita) {
-    modal.show();
-    return;
-  }
-
-  const rischio = parseInt(gravita.value) * parseInt(probabilita.value);
-let badge = "";
-
-if (rischio <= 3) {
-  badge = '<span class="badge bg-success ms-2">Basso</span>';
-} else if (rischio <= 8) {
-  badge = '<span class="badge bg-warning text-dark ms-2">Medio</span>';
-} else {
-  badge = '<span class="badge bg-danger ms-2">Alto</span>';
-}
-
-output.innerHTML = `Rischio: ${badge}`;
-fattore.innerHTML = `Fattore di Rischio = G(${gravita.value}) x P(${probabilita.value}) = ${rischio} `
-  output.className = "fw-bold fs-1 mt-3";
-});
-</script>
-    <footer class="bg-dark text-white text-center p-3 mt-5">
-  <p class="mb-1">Nura Assil</p>
-  <p class="mb-0">Università Telematica Pegaso – a.a. 2025/2026</p>
-</footer>
-</body>
+                                   output.innerHTML = `Rischio: ${badge}`;
+                                   fattore.innerHTML = `Fattore di Rischio = G(${gravita.value}) x P(${probabilita.value}) = ${rischio} `;
+                                   output.className = "fw-bold fs-1 mt-3";
+                         });
+             </script>
+                    
+             <footer class="bg-dark text-white text-center p-3 mt-5">
+                         <p class="mb-1">Nura Assil</p>
+                         <p class="mb-0">Università Telematica Pegaso – a.a. 2025/2026</p>
+             </footer>
+                    
+       </body>
 </html>
