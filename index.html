@@ -5,20 +5,21 @@
             
                 <title>Pagina web responsive per il calcolo del fattore di rischio</title>                                        <!-- Titolo della pagina web -->
 
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-                      rel="stylesheet" 
-                      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-                      crossorigin="anonymous">                                                                                    <!-- Collegamento al CSS di Bootstrap -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">            <!-- Collegamento al CSS di Bootstrap -->
         </head>
 
         <body class="d-flex flex-column min-vh-100" style="background-color: lightblue;">                                         <!-- Body con sfondo azzurro e uso di Flexbox per disporre in colonna gli elementi-->
+                
                 <div class="container flex-grow-1">                                                                               <!-- Container principale che racchiude i sotto-container -->
+                      
                       <div class="container p-5 my-5 bg-primary text-white" style="text-align: center;">                          <!-- Primo sotto-container Bootstrap con sfondo blu e testo bianco -->
                             <p class="h2">Sicurezza sul lavoro e tutela della privacy dei dati personali</p>                      <!-- Paragrafo introduttivo -->
                       </div>
 
                       <div class="container bg-white p-4 my-5">                                                                   <!-- Secondo sotto-container con sfondo bianco e testo nero per contenere 3 funzionalitá -->
-                            <div class="row justify-content-center">                                                              <!-- Grid Bootstrap per suddividere in 3 colonne il secondo sotto-container -->
+                            
+                              <div class="row justify-content-center">                                                            <!-- Grid Bootstrap per suddividere in 3 colonne il secondo sotto-container -->
+                                      
                                       <div class="col-md-4" style="text-align: center;">                                          <!-- Prima colonna per la guida al fattore di rischio-->
                                             <img src="guida.png" class="rounded" height="150">                                    <!-- Immagine arrotondata con size=150 in riferimento alla guida -->
                                             <p class="h4"><br> COS´È IL FATTORE DI RISCHIO? </p>                                  <!-- Titolo per la sezione Guida -->
@@ -36,16 +37,17 @@
                                       </div>
 
                                       <div class="col-md-4" style="text-align: center;">                                                   <!-- Terza colonna per la visualizzazione del QR Code-->
+                                            
                                             <div id="qrcode" class="d-flex justify-content-center"><br></div>                              <!-- Contenitore Bootstrap dove verrá inserito il QR Code -->
-                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>    <!-- Libreria esterna per il QRCode -->
-                                            <script>
-                                                       const url = "https://nassil94.github.io";                                                  
-                                                       new QRCode(document.getElementById("qrcode"), {
-                                                                text: url,   
-                                                                width: 150,
-                                                                height: 150
-                                                       });                                        
-                                            </script>                                                                              <!-- Script che genera un QR code dall'URL della pagina (dimensioni 150x150) -->
+                                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>    <!-- Libreria esterna per il QRCode -->
+                                                    <script>
+                                                               const url = "https://nassil94.github.io";                                                  
+                                                               new QRCode(document.getElementById("qrcode"), {
+                                                                        text: url,   
+                                                                        width: 150,
+                                                                        height: 150
+                                                               });                                        
+                                                    </script>                                                                      <!-- Script che genera un QR code dall'URL della pagina (dimensioni 150x150) -->
                                             <p class="h4"><br>ACCEDI DA DISPOSITIVO MOBILE</p>                                     <!-- Titolo per la sezione QR Code -->
                                             <h6><small> Inquadra il QR Code con la fotocamera del tuo smartphone </small></h6>     <!-- Sotto-titolo -->
                                       </div>
