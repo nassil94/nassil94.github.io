@@ -18,7 +18,7 @@
                          </div>
                     
                          <div class="container">                                                                                        <!-- Secondo sotto-container --> 
-                                   <div class="row g-4">                                                                                <!-- Riga della Grid Bootstrap con spaziatura tra colonne -->
+                                   <div class="row g-4">                                                                                <!-- Layout a due colonne con griglia Bootstrap -->
                                        <div class="col-md-6">                                                                           <!-- Prima colonna del sotto-container -->
                                              <form id="rischio" class="p-3 bg-white rounded shadow">                                    <!-- Form con radio button Bootstrap  per la gravitá del danno -->
                                                   <h4>Gravità del danno(G):</h4>
@@ -84,54 +84,56 @@
                                         </div>
 
                                    <div class="col-md-6 text-center">                                                                 <!-- Seconda colonna del sotto-container -->
-                                                                                                                                      <!-- Margine sopra all´immagine Matrice del rischio -->
-                                              <img src="matrice_del_rischio.jpg"
-                                                 class="img-fluid rounded shadow mb-2"
-                                                 style="max-height: 400px; width: auto;">
+                                                                                                                        
+                                              <img src="matrice_del_rischio.jpg"                                                      
+                                                      class="img-fluid rounded shadow mb-2"
+                                                      style="max-height: 400px; 
+                                                      width: auto;">                                                                  <!-- Immagine responsive della Matrice del rischio con altezza al massimo di 400px -->
 
-                                                 <div id="messaggio" class="fw-bold fs-2"></div>
+                                             <div id="messaggio" class="fw-bold fs-2"></div>                                          <!-- Messaggio di output all´utente sul livello di rischio -->
                                              
-                                                 <div id="calcolo" class="fs-4 mt-1"></div>
+                                             <div id="calcolo" class="fs-4 mt-1"></div>                                               <!-- Messaggio di output all´utente sul fattore di rischio -->
                                         </div>
                                    </div>
                               </div>
-                              <br><button onclick="window.location.href='index.html'" class="btn btn-primary btn-lg d-block mx-auto"> Homepage </button>
+                              <br><button onclick="window.location.href='index.html'" class="btn btn-primary btn-lg d-block mx-auto"> Homepage </button>     <!-- Bottone Bootstrap per tornare alla Homepage -->
                        </div>
-               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-               <script>
+          
+               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>                                          <!-- Implementazione libreria JavaScript di Bootstrap -->
+               <script>                                                                                                                                      //Script in JS
                          document.getElementById("rischio").addEventListener("submit", function(e) {
                               
                               	e.preventDefault();
 
-                                   const gravita = document.querySelector('input[name="gravita"]:checked');
-                                   const probabilita = document.querySelector('input[name="probabilita"]:checked');
-                                   const output = document.getElementById("messaggio");
-                                   const fattore = document.getElementById("calcolo");
-                                   const modal = new bootstrap.Modal(document.getElementById('erroreModal'));
+                                   const gravita = document.querySelector('input[name="gravita"]:checked');                                         //Prende elemento selezionato dal Form Gravità e lo salva in "gravita"
+                                   const probabilita = document.querySelector('input[name="probabilita"]:checked');                                 //Prende elemento selezionato dal Form Probabilitá e lo salva in "probabilita"
+                                   const output = document.getElementById("messaggio");                                                             //Elemento utile per visualizzare il livello del rischio
+                                   const fattore = document.getElementById("calcolo");                                                              //Elemento utile per visualizzare il risultato fel fattore di rischio
+                                   const modal = new bootstrap.Modal(document.getElementById('erroreModal'));                                       //Creazione di un oggetto Modale Bootstrap
 
-                                   if (!gravita || !probabilita) {
-                                            modal.show();
+                                   if (!gravita || !probabilita) {                                                                                   //Condizione che si verifica in caso manca la selezione di uno dei due valori del form
+                                            modal.show();                                                                                            //Appare un messaggio di errore in caso la condizione sia vera
                                             return;
                                    }
 
-                                   const rischio = parseInt(gravita.value) * parseInt(probabilita.value);
-                                   let badge = "";
-                              
-                                   if (rischio <= 3) {
-                                            badge = '<span class="badge bg-success ms-2">Basso</span>';
-                                   } else if (rischio <= 8) {
-                                            badge = '<span class="badge bg-warning text-dark ms-2">Medio</span>';
-                                   } else {
-                                            badge = '<span class="badge bg-danger ms-2">Alto</span>';
+                                   const rischio = parseInt(gravita.value) * parseInt(probabilita.value);                                             //Utilizzo del parseInt per trasformare in intero i valori ricavati dai due form
+                                   let badge = "";                                                                                                    //Creazione di una variabile utile per la visualizzazione del badge Bootstrap
+                                   
+                                   if (rischio <= 3) {                                                                                                //Condizione in cui il rischio é <= a 3
+                                            badge = '<span class="badge bg-success ms-2">Basso</span>';                                               //Badge color verde con testo "Basso"
+                                   } else if (rischio <= 8) {                                                                                         //Condizione in cui il rischio é <= a 8
+                                            badge = '<span class="badge bg-warning text-dark ms-2">Medio</span>';                                     //Badge color giallo con testo "Medio"
+                                   } else {                                                                                                           //Altrimenti
+                                            badge = '<span class="badge bg-danger ms-2">Alto</span>';                                                 //Badge color rosso con testo "Alto"
                                    }
 
-                                   output.innerHTML = `Rischio: ${badge}`;
-                                   fattore.innerHTML = `Fattore di Rischio = G(${gravita.value}) x P(${probabilita.value}) = ${rischio} `;
+                                   output.innerHTML = `Rischio: ${badge}`;                                                                            //Output del valore del Badge Bootstrap
+                                   fattore.innerHTML = `Fattore di Rischio = G(${gravita.value}) x P(${probabilita.value}) = ${rischio} `;            //Output col risultato del fattore di rischio
                                    output.className = "fw-bold fs-1 mt-3";
                          });
              </script>
                     
-             <footer class="bg-dark text-white text-center p-3 mt-5">
+             <footer class="bg-dark text-white text-center p-3 mt-5">                                                                                  <!-- Footer Bootstrap scuro con informatzioni-->
                          <p class="mb-1">Nura Assil</p>
                          <p class="mb-0">Università Telematica Pegaso – a.a. 2025/2026</p>
              </footer>
