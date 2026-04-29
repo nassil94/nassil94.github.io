@@ -1,68 +1,61 @@
 <html>
-    <head>
-        <meta charset="UTF-8">                                                                                    <!-- Per l´interprezazione dei caratteri del testo -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">                                    <!-- Per rendere la pagina adattabile a qualsiasi dispositivo -->
-        <title>Pagina web responsive per il calcolo del fattore di rischio</title>                                <!-- Titolo della pagina web -->
+        <head>
+                <meta charset="UTF-8">                                                                                            <!-- Interpretazione dei caratteri del testo nella pagina web-->
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">                                            <!-- Imposta il viewport per adattare il layout ai dispositivi mobili -->
+            
+                <title>Pagina web responsive per il calcolo del fattore di rischio</title>                                        <!-- Titolo della pagina web -->
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-              rel="stylesheet" 
-              integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-              crossorigin="anonymous">                                                                            <!-- link a Bootstrap -->
-    </head>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+                      rel="stylesheet" 
+                      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+                      crossorigin="anonymous">                                                                                    <!-- Collegamento al CSS di Bootstrap -->
+        </head>
 
-    <body class="d-flex flex-column min-vh-100" style="background-color: lightblue;">
-        <div class="container flex-grow-1">
-        <div class="container p-5 my-5 bg-primary text-white" style="text-align: center;">                                                    <!-- Creazione del primo container -->
-            <p class="h2">Sicurezza sul lavoro e tutela della privacy dei dati personali</p>
-        </div>
+        <body class="d-flex flex-column min-vh-100" style="background-color: lightblue;">                                         <!-- Body con sfondo azzurro e uso di Flexbox per disporre in colonna gli elementi-->
+                <div class="container flex-grow-1">                                                                               <!-- Container principale che racchiude i sotto-container -->
+                      <div class="container p-5 my-5 bg-primary text-white" style="text-align: center;">                          <!-- Primo sotto-container Bootstrap con sfondo blu e testo bianco -->
+                            <p class="h2">Sicurezza sul lavoro e tutela della privacy dei dati personali</p>                      <!-- Paragrafo introduttivo -->
+                      </div>
 
-        <div class="container bg-white p-4 my-5">                                                                   <!-- Creazione del secondo container -->
-            <div class="row justify-content-center">                                                                                     <!-- Creazione del Grid per suddividere in 3 colonne il seccondo container -->
-              
-                <div class="col-md-4" style="text-align: center;">  <!-- Prima colonna -->
-                    <img src="guida.png" class="rounded" height="150">
-                    <p class="h4"><br>COS´È IL FATTORE DI RISCHIO?</p>
-                    <h6><small>Guida al fattore di rischio con definizioni, calcolo e normativa sulla privacy in ambito lavorativo.</small></h6>
-                    <a href="Sicurezza e privatezza aziendale.pdf" download class="btn btn-primary">
-                            Scarica PDF
-                    </a>
-                    <br><br>
-                </div>
+                      <div class="container bg-white p-4 my-5">                                                                   <!-- Secondo sotto-container con sfondo bianco e testo nero per contenere 3 funzionalitá -->
+                            <div class="row justify-content-center">                                                              <!-- Grid Bootstrap per suddividere in 3 colonne il secondo sotto-container -->
+                                      <div class="col-md-4" style="text-align: center;">                                          <!-- Prima colonna per la guida al fattore di rischio-->
+                                            <img src="guida.png" class="rounded" height="150">                                    <!-- Immagine arrotondata con size=150 in riferimento alla guida -->
+                                            <p class="h4"><br> COS´È IL FATTORE DI RISCHIO? </p>                                  <!-- Titolo per la sezione Guida -->
+                                            <h6><small> Guida al fattore di rischio con definizioni, calcolo e normativa sulla privacy in ambito lavorativo. </small></h6>   <!-- Sotto-titolo-->
+                                            <a href="Sicurezza e privatezza aziendale.pdf" download class="btn btn-primary"> Scarica PDF </a>                                <!-- Pulsante Bootstrap per scaricare PDF -->     
+                                            <br><br>
+                                      </div>
 
-                 <div class="col-md-4" style="text-align: center;">  <!-- Prima colonna -->
-                    <img src="calcola.png" class="rounded" height="150">
-                    <p class="h4"><br>VALUTA IL RISCHIO<br></p>
-                    <h6><small>Strumento interattivo per calcolare il rischio scegliendo probabilità e gravità.</small></h6>
-                    <button onclick="window.location.href='calcolatore_rischio.html'" class="btn btn-primary">                        
-                        Calcolatore
-                    </button>
-                    <br><br>
-                </div>
+                                      <div class="col-md-4" style="text-align: center;">                                           <!-- Seconda colonna per la sezione del calcolatore immediato del RF -->
+                                            <img src="calcola.png" class="rounded" height="150">                                   <!-- Immagine in riferimento al calcolatore -->
+                                            <p class="h4"><br>VALUTA IL RISCHIO<br></p>                                            <!-- Titolo per la sezione Calcolatore -->
+                                            <h6><small> Strumento interattivo per calcolare il rischio scegliendo probabilità e gravità. </small></h6>                <!-- Sotto-titolo -->
+                                            <button onclick="window.location.href='calcolatore_rischio.html'" class="btn btn-primary"> Calcolatore </button>          <!-- Pulsante Bootstrap per entrare nel Calcolatore -->
+                                            <br><br>
+                                      </div>
 
-                <div class="col-md-4" style="text-align: center;">                                                                             <!-- Terza colonna -->
-                    <div id="qrcode" class="d-flex justify-content-center"><br></div>                
-
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>    <!-- Generazione QRCode tramite Script JS -->
-
-                    <script>
-                        const url = "https://nassil94.github.io";                                                  
-
-                        new QRCode(document.getElementById("qrcode"), {
-                            text: url,   // FIX: ora usa la variabile
-                            width: 150,
-                            height: 150
-                        });                                        
-                    </script>                                                                                      <!-- Codice JS in cui linka alla pagina web e con dimenxione di 150x150 -->
-                    <p class="h4"><br>ACCEDI DA DISPOSITIVO MOBILE</p>
-                    <h6><small>Inquadra il QR Code con la fotocamera del tuo smartphone</small></h6>
-                </div>
-
-            </div>
-        </div>
-        </div>
-        <footer class="bg-dark text-white text-center p-3 mt-5">
-  <p class="mb-1">Nura Assil</p>
-  <p class="mb-0">Università Telematica Pegaso – a.a. 2025/2026</p>
-</footer>
-    </body>
+                                      <div class="col-md-4" style="text-align: center;">                                                   <!-- Terza colonna per la visualizzazione del QR Code-->
+                                            <div id="qrcode" class="d-flex justify-content-center"><br></div>                              <!-- Contenitore Bootstrap dove verrá inserito il QR Code -->
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>    <!-- Libreria esterna per il QRCode -->
+                                            <script>
+                                                       const url = "https://nassil94.github.io";                                                  
+                                                       new QRCode(document.getElementById("qrcode"), {
+                                                                text: url,   
+                                                                width: 150,
+                                                                height: 150
+                                                       });                                        
+                                            </script>                                                                              <!-- Script che genera un QR code dall'URL della pagina (dimensioni 150x150) -->
+                                            <p class="h4"><br>ACCEDI DA DISPOSITIVO MOBILE</p>                                     <!-- Titolo per la sezione QR Code -->
+                                            <h6><small> Inquadra il QR Code con la fotocamera del tuo smartphone </small></h6>     <!-- Sotto-titolo -->
+                                      </div>
+                             </div>
+                    </div>
+             </div>
+            
+            <footer class="bg-dark text-white text-center p-3 mt-5">                                                                <!-- Footer Bootstrap scuro -->
+                  <p class="mb-1">Nura Assil</p>
+                  <p class="mb-0">Università Telematica Pegaso – a.a. 2025/2026</p>
+            </footer>
+      </body>
 </html>
