@@ -105,11 +105,11 @@
                               
                               	e.preventDefault();
 
-                                   const gravita = document.querySelector('input[name="gravita"]:checked');                                         //Prende elemento selezionato dal Form Gravità e lo salva in "gravita"
-                                   const probabilita = document.querySelector('input[name="probabilita"]:checked');                                 //Prende elemento selezionato dal Form Probabilitá e lo salva in "probabilita"
-                                   const output = document.getElementById("messaggio");                                                             //Elemento utile per visualizzare il livello del rischio
-                                   const fattore = document.getElementById("calcolo");                                                              //Elemento utile per visualizzare il risultato fel fattore di rischio
-                                   const modal = new bootstrap.Modal(document.getElementById('erroreModal'));                                       //Creazione di un oggetto Modale Bootstrap
+                                   const gravita = document.querySelector('input[name="gravita"]:checked');                                         //Metodo del DOM che prende elemento selezionato dal Form Gravità e lo salva in "gravita"
+                                   const probabilita = document.querySelector('input[name="probabilita"]:checked');                                 //Metodo del DOM che prende elemento selezionato dal Form Probabilitá e lo salva in "probabilita"
+                                   const output = document.getElementById("messaggio");                                                             //Metodo del DOM utile per visualizzare il livello del rischio
+                                   const fattore = document.getElementById("calcolo");                                                              //Metodo del DOM utile per visualizzare il risultato fel fattore di rischio
+                                   const modal = new bootstrap.Modal(document.getElementById('erroreModal'));                                       //Creazione di un oggetto Modale Bootstrap 
 
                                    if (!gravita || !probabilita) {                                                                                   //Condizione che si verifica in caso manca la selezione di uno dei due valori del form
                                             modal.show();                                                                                            //Appare un messaggio di errore in caso la condizione sia vera
