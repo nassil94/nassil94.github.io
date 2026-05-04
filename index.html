@@ -1,6 +1,6 @@
 <html>
         <head>
-                <meta charset="UTF-8">                                                                                            <!-- Interpretazione dei caratteri del testo nella pagina web-->
+                <meta charset="UTF-8">                                                                                            <!-- Codifica  delle lettere accentate del testo nella pagina web-->
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">                                            <!-- Imposta il viewport per adattare il layout ai dispositivi mobili -->
             
                 <title>Pagina web responsive per il calcolo del fattore di rischio</title>                                        <!-- Titolo della pagina web -->
@@ -23,7 +23,7 @@
                                       <div class="col-md-4" style="text-align: center;">                                          <!-- Prima colonna per la guida al fattore di rischio-->
                                             <img src="guida.png" class="rounded" height="150">                                    <!-- Immagine arrotondata con size=150 in riferimento alla guida -->
                                             <p class="h4"><br> COS´È IL FATTORE DI RISCHIO? </p>                                  <!-- Titolo per la sezione Guida -->
-                                            <h6><small> Guida completa al fattore di rischio con definizioni, formule di calcolo e approfondimenti sulla normativa privacy e sicurezza (D.Lgs. 81/08). </small></h6>   <!-- Sotto-titolo-->
+                                            <h6><small> Guida completa al fattore di rischio con definizioni, formule di calcolo e approfondimenti sulla normativa privacy e sicurezza (D.Lgs. 81/08). </small></h6> <!-- Sotto-titolo-->
                                             <a href="Sicurezza e privatezza aziendale.pdf" download class="btn btn-primary"> Scarica PDF </a>                                <!-- Pulsante Bootstrap per scaricare PDF -->     
                                             <br><br>
                                       </div>
@@ -31,15 +31,15 @@
                                       <div class="col-md-4" style="text-align: center;">                                           <!-- Seconda colonna per la sezione del calcolatore immediato del RF -->
                                             <img src="calcola.png" class="rounded" height="150">                                   <!-- Immagine in riferimento al calcolatore -->
                                             <p class="h4"><br>VALUTA IL RISCHIO<br></p>                                            <!-- Titolo per la sezione Calcolatore -->
-                                            <h6><small> Strumento interattivo per il calcolo rapido del rischio.<br>L'utilizzo è totalmente anonimo e non prevede alcuna raccolta di dati personali. </small></h6>                <!-- Sotto-titolo -->
+                                            <h6><small> Strumento interattivo per il calcolo rapido del rischio.<br>L'utilizzo è totalmente anonimo e non prevede alcuna raccolta di dati personali. </small></h6> <!-- Sotto-titolo -->
                                             <button onclick="window.location.href='calcolatore_rischio.html'" class="btn btn-primary"> Calcolatore </button>          <!-- Pulsante Bootstrap per entrare nel Calcolatore -->
                                             <br><br>
                                       </div>
 
                                       <div class="col-md-4" style="text-align: center;">                                                   <!-- Terza colonna per la visualizzazione del QR Code-->
                                             
-                                            <div id="qrcode" class="d-flex justify-content-center"><br></div>                              <!-- Contenitore Bootstrap dove verrá inserito il QR Code -->
-                                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>    <!-- Libreria esterna per il QRCode -->
+                                            <div id="qrcode" class="d-flex justify-content-center"><br></div>                              <!-- Contenitore Bootstrap per il QR Code -->
+                                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>    <!-- Libreria esterna per il QR Code -->
                                                     <script>
                                                                const url = "https://nassil94.github.io";                                                  
                                                                new QRCode(document.getElementById("qrcode"), {
